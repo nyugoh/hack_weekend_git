@@ -11,6 +11,10 @@ app.get('/', function(req, res, next){
   res.send('Hello world')
 });
 
+app.get('/*', function(req, res, next){
+  res.send('Path not found')
+});
+
 var server = http.createServer(app);
 server.listen(app.get('port'), function(){
   console.log('Server running on port %s %s', server.address().hostName, server.address().port);
